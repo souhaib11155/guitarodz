@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuitarDZ | Algeria's Premier Guitar &amp; Gear Store</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Cinzel for display accents -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for crisp UI & musical icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        obsidian: {
+                            950: '#09090b',
+                            900: '#101014',
+                            800: '#18181f',
+                            700: '#24242e',
+                        },
+                        mahogany: {
+                            900: '#2b110d',
+                            800: '#451a14',
+                            700: '#63251c',
+                        },
+                        amberforge: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom subtle scrollbars and glass effects */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #09090b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d97706;
+        }
+        .guitar-gradient {
+            background: radial-gradient(circle at 75% 30%, rgba(217, 119, 6, 0.16), rgba(69, 26, 20, 0.25) 45%, rgba(9, 9, 11, 0.98) 85%);
+        }
+    </style>
+</head>
+<body class="bg-obsidian-950 text-zinc-100 font-sans antialiased selection:bg-amberforge-500 selection:text-obsidian-950 overflow-x-hidden">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-mahogany-900 via-mahogany-800 to-mahogany-900 border-b border-amberforge-500/20 text-xs sm:text-sm py-2 px-4 text-center text-amber-100/90">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-x-6 gap-y-1">
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-truck-fast text-amberforge-400"></i> <span data-i18n="top_delivery">Fast Yalidine / ZR Express Delivery to 58 Wilayas</span></span>
+            <span class="hidden sm:inline text-amberforge-500/40">|</span>
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-hand-holding-dollar text-amberforge-400"></i> <span data-i18n="top_cod">Cash on Delivery (Paiement à la livraison) &amp; BaridiMob</span></span>
+        </div>
+    </div>
+
+    <!-- Main Sticky Header -->
+    <header class="sticky top-0 z-40 bg-obsidian-950/85 backdrop-blur-xl border-b border-zinc-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 gap-4">
+                
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group shrink-0" onclick="resetFilters()">
+                    <div class="relative w-11 h-11 rounded-xl bg-gradient-to-br from-amberforge-400 via-amberforge-600 to-mahogany-800 p-[1px] shadow-lg shadow-amberforge-500/10 group-hover:shadow-amberforge-500/30 transition-all">
+                        <div class="w-full h-full bg-obsidian-900 rounded-[11px] flex items-center justify-center relative overflow-hidden">
+                            <!-- Custom Guitar Pick & Strings SVG -->
+                            <svg class="w-7 h-7 text-amberforge-400 transform group-hover:scale-110 transition-transform" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 3C10.5 3 6 8.2 6 14.5C6 22.8 14.2 30.8 17.1 32.7C17.65 33.06 18.35 33.06 18.9 32.7C21.8 30.8 30 22.8 30 14.5C30 8.2 25.5 3 18 3Z" fill="url(#pickGrad)" fill-opacity="0.2" stroke="currentColor" stroke-width="2"/>
+                                <line x1="14" y1="6" x2="14" y2="28" stroke="currentColor" stroke-width="1.2" stroke-opacity="0.7"/>
+                                <line x1="18" y1="5" x2="18" y2="30" stroke="currentColor" stroke-width="1.5"/>
+                                <line x1="22" y1="6" x2="22" y2="28" stroke="currentColor" stroke-width="1.2" stroke-opacity="0.7"/>
+                                <defs>
+                                    <linearGradient id="pickGrad" x1="6" y1="3" x2="30" y2="33" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#FBBF24"/>
+                                        <stop offset="1" stop-color="#7F1D1D"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-white">Guitar<span class="text-amberforge-400">DZ</span></span>
+                        <span class="block text-[10px] uppercase tracking-[0.22em] text-zinc-400 -mt-1">Algérie • Pro Audio</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Category Nav -->
+                <nav class="hidden xl:flex items-center gap-1 text-sm font-medium text-zinc-300">
+                    <button onclick="selectCategoryFromNav('Electric')" class="px-3 py-2 rounded-lg hover:text-amberforge-400 hover:bg-zinc-900 transition" data-i18n="nav_electric">Electric Guitars</button>
+                    <button onclick="selectCategoryFromNav('Acoustic')" class="px-3 py-2 rounded-lg hover:text-amberforge-400 hover:bg-zinc-900 transition" data-i18n="nav_acoustic">Acoustic Guitars</button>
+                    <button onclick="selectCategoryFromNav('Bass')" class="px-3 py-2 rounded-lg hover:text-amberforge-400 hover:bg-zinc-900 transition" data-i18n="nav_bass">Basses</button>
+                    <button onclick="selectCategoryFromNav('Amps & Pedals')" class="px-3 py-2 rounded-lg hover:text-amberforge-400 hover:bg-zinc-900 transition" data-i18n="nav_amps">Amps &amp; Pedals</button>
+                    <button onclick="selectCategoryFromNav('Accessories')" class="px-3 py-2 rounded-lg hover:text-amberforge-400 hover:bg-zinc-900 transition" data-i18n="nav_accessories">Accessories</button>
+                    <a href="#luthier-section" class="px-3 py-2 rounded-lg hover:text-amberforge-400 hover:bg-zinc-900 transition" data-i18n="nav_luthier">Luthier &amp; Contact</a>
+                </nav>
+
+                <!-- Search Bar & Controls -->
+                <div class="flex items-center gap-2 sm:gap-3 flex-1 max-w-md justify-end">
+                    <!-- Live Search Input -->
+                    <div class="relative flex-1 max-w-xs hidden sm:block">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-400 text-xs"></i>
+                        <input id="searchInput" type="text" placeholder="Search Fender, Boss, Stratocaster..." 
+                            class="w-full bg-obsidian-900/90 border border-zinc-800 focus:border-amberforge-500 rounded-xl pl-9 pr-4 py-2 text-sm text-zinc-100 placeholder-zinc-500 focus:outline-none focus:ring-1 focus:ring-amberforge-500/50 transition">
+                    </div>
+
+                    <!-- Language Switcher (EN / FR / AR) -->
+                    <div class="flex items-center bg-obsidian-900 border border-zinc-800 rounded-xl p-1 text-xs font-semibold">
+                        <button onclick="setLanguage('en')" id="lang-en" class="px-2 py-1 rounded-lg bg-amberforge-500 text-obsidian-950 transition">EN</button>
+                        <button onclick="setLanguage('fr')" id="lang-fr" class="px-2 py-1 rounded-lg text-zinc-400 hover:text-white transition">FR</button>
+                        <button onclick="setLanguage('ar')" id="lang-ar" class="px-2 py-1 rounded-lg text-zinc-400 hover:text-white transition">عربي</button>
+                    </div>
+
+                    <!-- Cart Button -->
+                    <button onclick="toggleCart(true)" aria-label="Open Shopping Cart"
+                        class="relative p-3 rounded-xl bg-obsidian-900 hover:bg-obsidian-800 border border-zinc-800 hover:border-amberforge-500/50 text-zinc-100 transition group">
+                        <i class="fa-solid fa-bag-shopping text-lg text-amberforge-400 group-hover:scale-105 transition-transform"></i>
+                        <span id="cartBadge" class="absolute -top-1.5 -right-1.5 min-w-[22px] h-[22px] px-1 rounded-full bg-amberforge-500 text-obsidian-950 text-xs font-extrabold flex items-center justify-center shadow-md">
+                            0
+                        </span>
+                    </button>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button onclick="toggleMobileMenu()" aria-label="Toggle Menu" class="xl:hidden p-3 rounded-xl bg-obsidian-900 border border-zinc-800 text-zinc-200 hover:text-amberforge-400">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Search & Dropdown Nav -->
+            <div id="mobileMenu" class="hidden xl:hidden pb-4 pt-2 border-t border-zinc-800/80 space-y-3">
+                <div class="relative sm:hidden">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-400 text-xs"></i>
+                    <input id="mobileSearchInput" type="text" placeholder="Search guitars, amps, pedals..." 
+                        class="w-full bg-obsidian-900 border border-zinc-800 focus:border-amberforge-500 rounded-xl pl-9 pr-4 py-2.5 text-sm text-zinc-100 placeholder-zinc-500 focus:outline-none">
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm font-medium">
+                    <button onclick="selectCategoryFromNav('Electric'); toggleMobileMenu()" class="text-left px-3 py-2.5 rounded-xl bg-obsidian-900 hover:bg-obsidian-800 text-zinc-200">Electric Guitars</button>
+                    <button onclick="selectCategoryFromNav('Acoustic'); toggleMobileMenu()" class="text-left px-3 py-2.5 rounded-xl bg-obsidian-900 hover:bg-obsidian-800 text-zinc-200">Acoustic Guitars</button>
+                    <button onclick="selectCategoryFromNav('Bass'); toggleMobileMenu()" class="text-left px-3 py-2.5 rounded-xl bg-obsidian-900 hover:bg-obsidian-800 text-zinc-200">Basses</button>
+                    <button onclick="selectCategoryFromNav('Amps & Pedals'); toggleMobileMenu()" class="text-left px-3 py-2.5 rounded-xl bg-obsidian-900 hover:bg-obsidian-800 text-zinc-200">Amps &amp; Pedals</button>
+                    <button onclick="selectCategoryFromNav('Accessories'); toggleMobileMenu()" class="text-left px-3 py-2.5 rounded-xl bg-obsidian-900 hover:bg-obsidian-800 text-zinc-200">Accessories</button>
+                    <a href="#luthier-section" onclick="toggleMobileMenu()" class="text-left px-3 py-2.5 rounded-xl bg-obsidian-900 hover:bg-obsidian-800 text-amberforge-400">Luthier &amp; Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden guitar-gradient border-b border-zinc-800/80">
+        <!-- Decorative subtle grid -->
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:36px_36px] pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+                
+                <!-- Left Hero Copy -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amberforge-500/10 border border-amberforge-500/30 text-amberforge-400 text-xs sm:text-sm font-semibold tracking-wide">
+                        <span class="w-2 h-2 rounded-full bg-amberforge-400 animate-pulse"></span>
+                        <span data-i18n="hero_kicker">Algeria's Premier Guitar Destination • Alger • Annaba • Oran</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
+                        <span data-i18n="hero_title_1">Find Your</span>
+                        <span class="block text-transparent bg-clip-text bg-gradient-to-r from-amberforge-400 via-amber-200 to-amberforge-500 font-display mt-1" data-i18n="hero_title_2">
+                            Signature Sound
+                        </span>
+                    </h1>
+
+                    <p class="text-zinc-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed" data-i18n="hero_subtitle">
+                        From iconic Fender Stratocasters and Gibson Les Pauls to stage-ready Marshall amps and analog pedals. Inspected by our luthiers and delivered safely to all 58 wilayas.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#catalog" onclick="selectCategoryFromNav('All')" 
+                            class="w-full sm:w-auto px-7 py-4 rounded-xl bg-gradient-to-r from-amberforge-500 to-amberforge-600 hover:from-amberforge-400 hover:to-amberforge-500 text-obsidian-950 font-bold text-sm sm:text-base shadow-lg shadow-amberforge-500/25 transition-all flex items-center justify-center gap-2.5">
+                            <span data-i18n="cta_shop">Shop Collection</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#catalog" onclick="selectCategoryFromNav('Amps & Pedals')" 
+                            class="w-full sm:w-auto px-7 py-4 rounded-xl bg-obsidian-900/90 hover:bg-obsidian-800 border border-zinc-700 hover:border-amberforge-500/50 text-white font-semibold text-sm sm:text-base transition-all flex items-center justify-center gap-2.5">
+                            <i class="fa-solid fa-sliders text-amberforge-400"></i>
+                            <span data-i18n="cta_amps">Explore Amps &amp; Gear</span>
+                        </a>
+                    </div>
+
+                    <!-- Highlight Trust Badges -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 border-t border-zinc-800/80">
+                        <div class="flex items-center justify-center lg:justify-start gap-3 bg-obsidian-900/60 border border-zinc-800/80 rounded-xl p-3">
+                            <div class="w-9 h-9 rounded-lg bg-amberforge-500/15 text-amberforge-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="text-xs font-bold text-white" data-i18n="badge_wilayas">Delivery to 58 Wilayas</p>
+                                <p class="text-[11px] text-zinc-400">Insured hard-box shipping</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-center lg:justify-start gap-3 bg-obsidian-900/60 border border-zinc-800/80 rounded-xl p-3">
+                            <div class="w-9 h-9 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-money-bill-wave"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="text-xs font-bold text-white" data-i18n="badge_cod">Cash on Delivery (COD)</p>
+                                <p class="text-[11px] text-zinc-400">Or BaridiMob &amp; CIB</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-center lg:justify-start gap-3 bg-obsidian-900/60 border border-zinc-800/80 rounded-xl p-3">
+                            <div class="w-9 h-9 rounded-lg bg-amberforge-500/15 text-amberforge-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-certificate"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="text-xs font-bold text-white" data-i18n="badge_authentic">100% Authentic Gear</p>
+                                <p class="text-[11px] text-zinc-400">2-Year GuitarDZ Warranty</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hero Featured Showcase Card -->
+                <div class="lg:col-span-5">
+                    <div class="relative rounded-2xl bg-gradient-to-b from-obsidian-800 to-obsidian-900 border border-amberforge-500/25 p-5 sm:p-6 shadow-2xl">
+                        <div class="absolute -top-3.5 right-5 px-3 py-1 rounded-full bg-amberforge-500 text-obsidian-950 text-xs font-extrabold uppercase tracking-wider shadow-lg">
+                            Featured Drop
+                        </div>
+                        <div class="aspect-[4/3] rounded-xl overflow-hidden bg-obsidian-950 relative mb-5 border border-zinc-800">
+                            <img src="https://images.unsplash.com/photo-1550291652-6ea9114a47b1?auto=format&fit=crop&w=900&q=80" 
+                                 onerror="this.onerror=null;this.src='https://placehold.co/800x600/18181f/fbbf24?text=Gibson+Les+Paul+Standard';"
+                                 alt="Gibson Les Paul Standard '50s Heritage Cherry Sunburst" 
+                                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                            <div class="absolute bottom-3 left-3 bg-obsidian-950/85 backdrop-blur-md border border-zinc-700/80 px-3 py-1.5 rounded-lg">
+                                <span class="text-xs font-semibold text-amberforge-400">In Stock • Algiers Showroom</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start justify-between gap-4">
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-wider text-amberforge-400">Gibson USA</span>
+                                <h3 class="text-lg sm:text-xl font-bold text-white mt-0.5">Les Paul Standard '50s</h3>
+                                <p class="text-xs text-zinc-400 mt-1">Mahogany Body • Burstbucker 1 &amp; 2 • Hard Case</p>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <span class="block text-xl sm:text-2xl font-extrabold text-white">345,000 <span class="text-amberforge-400 text-sm">DA</span></span>
+                                <button onclick="addToCart(2)" class="mt-2 px-4 py-2 rounded-xl bg-amberforge-500 hover:bg-amberforge-400 text-obsidian-950 text-xs font-bold transition">
+                                    + Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Product Catalog -->
+    <main id="catalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+        
+        <!-- Section Header & Controls -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
+            <div>
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-amberforge-400">Curated Showroom</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-1" data-i18n="catalog_heading">Instruments &amp; Stage Gear</h2>
+            </div>
+
+            <!-- Sort & Result Count -->
+            <div class="flex flex-wrap items-center gap-3">
+                <span id="productCount" class="text-sm text-zinc-400 mr-2">Showing 10 items</span>
+                <label for="sortSelect" class="sr-only">Sort products</label>
+                <div class="relative">
+                    <select id="sortSelect" onchange="renderProducts()" 
+                        class="appearance-none bg-obsidian-900 border border-zinc-800 hover:border-zinc-700 focus:border-amberforge-500 rounded-xl pl-4 pr-10 py-2.5 text-sm text-zinc-200 focus:outline-none cursor-pointer">
+                        <option value="featured">Sort: Featured Gear</option>
+                        <option value="price-asc">Price: Low to High (DA)</option>
+                        <option value="price-desc">Price: High to Low (DA)</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down absolute right-3.5 top-1/2 -translate-y-1/2 text-xs text-zinc-400 pointer-events-none"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div id="categoryTabs" class="flex items-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar">
+            <button data-category="All" onclick="setCategory('All')" class="category-btn active px-4 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap bg-amberforge-500 text-obsidian-950 transition">
+                All Gear
+            </button>
+            <button data-category="Electric" onclick="setCategory('Electric')" class="category-btn px-4 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap bg-obsidian-900 text-zinc-300 border border-zinc-800 hover:border-amberforge-500/40 transition">
+                Electric Guitars
+            </button>
+            <button data-category="Acoustic" onclick="setCategory('Acoustic')" class="category-btn px-4 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap bg-obsidian-900 text-zinc-300 border border-zinc-800 hover:border-amberforge-500/40 transition">
+                Acoustic Guitars
+            </button>
+            <button data-category="Bass" onclick="setCategory('Bass')" class="category-btn px-4 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap bg-obsidian-900 text-zinc-300 border border-zinc-800 hover:border-amberforge-500/40 transition">
+                Basses
+            </button>
+            <button data-category="Amps & Pedals" onclick="setCategory('Amps & Pedals')" class="category-btn px-4 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap bg-obsidian-900 text-zinc-300 border border-zinc-800 hover:border-amberforge-500/40 transition">
+                Amps &amp; Pedals
+            </button>
+            <button data-category="Accessories" onclick="setCategory('Accessories')" class="category-btn px-4 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap bg-obsidian-900 text-zinc-300 border border-zinc-800 hover:border-amberforge-500/40 transition">
+                Accessories
+            </button>
+        </div>
+
+        <!-- Product Grid -->
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Dynamically populated by JavaScript -->
+        </div>
+
+        <!-- Empty Search State -->
+        <div id="emptyState" class="hidden text-center py-16 bg-obsidian-900/50 border border-zinc-800 rounded-2xl">
+            <i class="fa-solid fa-guitar text-4xl text-zinc-600 mb-3"></i>
+            <h3 class="text-lg font-bold text-white">No instruments match your filter</h3>
+            <p class="text-sm text-zinc-400 mt-1 mb-5">Try clearing your search term or switching categories.</p>
+            <button onclick="resetFilters()" class="px-5 py-2.5 rounded-xl bg-amberforge-500 text-obsidian-950 font-bold text-sm hover:bg-amberforge-400 transition">
+                Reset All Filters
+            </button>
+        </div>
+    </main>
+
+    <!-- Featured Section 1: Gear Bundles & Starter Packs Banner -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div class="relative rounded-3xl overflow-hidden bg-gradient-to-r from-mahogany-900 via-obsidian-900 to-obsidian-900 border border-amberforge-500/30 p-7 sm:p-10 lg:p-12 shadow-2xl">
+            <div class="grid lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-7 space-y-4">
+                    <span class="inline-block px-3 py-1 rounded-lg bg-amberforge-500/20 border border-amberforge-500/40 text-amberforge-400 text-xs font-bold uppercase tracking-wider">
+                        Save up to 12,000 DA
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold text-white">
+                        Complete Stage &amp; Bedroom Starter Packs
+                    </h2>
+                    <p class="text-zinc-300 text-sm sm:text-base max-w-xl leading-relaxed">
+                        Starting your musical journey in Algeria? Get a calibrated electric guitar, 15W practice amp, padded gig bag, braided cable, strap, and Dunlop picks in one discounted bundle.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <button onclick="addBundleToCart()" class="px-6 py-3.5 rounded-xl bg-amberforge-500 hover:bg-amberforge-400 text-obsidian-950 font-bold text-sm transition flex items-center gap-2 shadow-lg shadow-amberforge-500/20">
+                            <i class="fa-solid fa-box-open"></i>
+                            <span>Add Squier + Marshall Starter Pack — 64,000 DA</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 grid grid-cols-2 gap-3">
+                    <div class="bg-obsidian-950/80 border border-zinc-800 rounded-2xl p-4">
+                        <i class="fa-solid fa-sliders text-amberforge-400 text-xl mb-2"></i>
+                        <h4 class="font-bold text-white text-sm">Pro Action Setup</h4>
+                        <p class="text-xs text-zinc-400 mt-1">Low string height &amp; intonation tuned before shipping.</p>
+                    </div>
+                    <div class="bg-obsidian-950/80 border border-zinc-800 rounded-2xl p-4">
+                        <i class="fa-solid fa-plug text-amberforge-400 text-xl mb-2"></i>
+                        <h4 class="font-bold text-white text-sm">220V Algeria Ready</h4>
+                        <p class="text-xs text-zinc-400 mt-1">All amps &amp; power supplies include EU/DZ standard plugs.</p>
+                    </div>
+                    <div class="bg-obsidian-950/80 border border-zinc-800 rounded-2xl p-4">
+                        <i class="fa-solid fa-shield-halved text-amberforge-400 text-xl mb-2"></i>
+                        <h4 class="font-bold text-white text-sm">Double-Boxed Armor</h4>
+                        <p class="text-xs text-zinc-400 mt-1">Foam-cradled shipping via Yalidine &amp; ZR Express.</p>
+                    </div>
+                    <div class="bg-obsidian-950/80 border border-zinc-800 rounded-2xl p-4">
+                        <i class="fa-solid fa-headset text-amberforge-400 text-xl mb-2"></i>
+                        <h4 class="font-bold text-white text-sm">Musician Support</h4>
+                        <p class="text-xs text-zinc-400 mt-1">Chat with our guitarists on WhatsApp before you buy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Section 2: Luthier & Setup Service -->
+    <section id="luthier-section" class="bg-obsidian-900/70 border-y border-zinc-800/80 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-6 space-y-5">
+                    <span class="text-xs font-bold uppercase tracking-[0.2em] text-amberforge-400">GuitarDZ Workshop</span>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold text-white">
+                        Need a Precision Setup or Restringing?
+                    </h2>
+                    <p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
+                        Visit our workshops in <strong class="text-white">Hydra (Algiers)</strong> or <strong class="text-white">Saint-Cloud (Annaba)</strong>, or book a nationwide courier pickup from any wilaya. Our master luthiers handle truss rod calibration, fret leveling, Floyd Rose setups, and pickup swaps.
+                    </p>
+                    <ul class="space-y-2.5 text-sm text-zinc-300">
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-amberforge-400"></i> Full Setup + Elixir Strings Installation: <span class="font-bold text-white">3,500 DA</span></li>
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-amberforge-400"></i> Fretboard Lemon Oil Conditioning &amp; Polish: <span class="font-bold text-white">1,800 DA</span></li>
+                        <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-amberforge-400"></i> Electronics &amp; Pickup Soldering Upgrade: <span class="font-bold text-white">4,000 DA</span></li>
+                    </ul>
+                </div>
+
+                <!-- Interactive Luthier Booking Card -->
+                <div class="lg:col-span-6">
+                    <form id="luthierForm" onsubmit="submitLuthierBooking(event)" class="bg-obsidian-950 border border-zinc-800 rounded-2xl p-6 sm:p-8 space-y-4 shadow-xl">
+                        <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-wrench text-amberforge-400"></i>
+                            <span>Book Workshop Visit or Courier Pickup</span>
+                        </h3>
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-medium text-zinc-400 mb-1">Full Name</label>
+                                <input type="text" required placeholder="e.g. Mehdi Benali" class="w-full bg-obsidian-900 border border-zinc-800 focus:border-amberforge-500 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-zinc-400 mb-1">Phone Number (DZ)</label>
+                                <input type="tel" required placeholder="0550 12 34 56" class="w-full bg-obsidian-900 border border-zinc-800 focus:border-amberforge-500 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none">
+                            </div>
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-medium text-zinc-400 mb-1">Service Type</label>
+                                <select class="w-full bg-obsidian-900 border border-zinc-800 focus:border-amberforge-500 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none">
+                                    <option>Full Setup &amp; Restringing (3,500 DA)</option>
+                                    <option>Floyd Rose Calibration (4,500 DA)</option>
+                                    <option>Electronics / Pickup Repair (4,000 DA)</option>
+                                    <option>Acoustic Nut &amp; Saddle Setup (3,000 DA)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-zinc-400 mb-1">Drop-off / Pickup</label>
+                                <select class="w-full bg-obsidian-900 border border-zinc-800 focus:border-amberforge-500 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none">
+                                    <option>Algiers Workshop (Hydra)</option>
+                                    <option>Annaba Workshop (Centre)</option>
+                                    <option>Nationwide Courier Pickup (58 Wilayas)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full py-3 rounded-xl bg-amberforge-500 hover:bg-amberforge-400 text-obsidian-950 font-bold text-sm transition">
+                            Request Luthier Appointment
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-obsidian-950 pt-14 pb-10 border-t border-zinc-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-zinc-900">
+                
+                <!-- Col 1: Brand -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2.5">
+                        <span class="text-2xl font-extrabold text-white">Guitar<span class="text-amberforge-400">DZ</span></span>
+                    </div>
+                    <p class="text-sm text-zinc-400 leading-relaxed">
+                        Algeria's specialized online &amp; showroom guitar store. Supplying authentic electric guitars, acoustics, basses, amps, and studio gear across all 58 wilayas.
+                    </p>
+                    <div class="flex items-center gap-3 pt-1">
+                        <a href="#catalog" aria-label="Instagram" class="w-9 h-9 rounded-xl bg-obsidian-900 border border-zinc-800 hover:border-amberforge-500/50 flex items-center justify-center text-zinc-300 hover:text-amberforge-400 transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#catalog" aria-label="Facebook" class="w-9 h-9 rounded-xl bg-obsidian-900 border border-zinc-800 hover:border-amberforge-500/50 flex items-center justify-center text-zinc-300 hover:text-amberforge-400 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#catalog" aria-label="YouTube" class="w-9 h-9 rounded-xl bg-obsidian-900 border border-zinc-800 hover:border-amberforge-500/50 flex items-center justify-center text-zinc-300 hover:text-amberforge-400 transition"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#catalog" aria-label="TikTok" class="w-9 h-9 rounded-xl bg-obsidian-900 border border-zinc-800 hover:border-amberforge-500/50 flex items-center justify-center text-zinc-300 hover:text-amberforge-400 transition"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Showrooms & Contact -->
+                <div class="space-y-3 text-sm">
+                    <h4 class="font-bold text-white uppercase tracking-wider text-xs">Showrooms &amp; Contact</h4>
+                    <p class="text-zinc-400 flex items-start gap-2.5">
+                        <i class="fa-solid fa-location-dot text-amberforge-400 mt-1"></i>
+                        <span>Rue Sidi Yahia, Hydra, Alger (16)<br>Boulevard Ernesto Che Guevara, Annaba (23)</span>
+                    </p>
+                    <p class="text-zinc-400 flex items-center gap-2.5">
+                        <i class="fa-solid fa-phone text-amberforge-400"></i>
+                        <span>+213 (0) 550 88 44 22</span>
+                    </p>
+                    <p class="text-zinc-400 flex items-center gap-2.5">
+                        <i class="fa-solid fa-envelope text-amberforge-400"></i>
+                        <span>contact@guitardz.dz</span>
+                    </p>
+                </div>
+
+                <!-- Col 3: Algerian Shipping & Payment -->
+                <div class="space-y-3 text-sm">
+                    <h4 class="font-bold text-white uppercase tracking-wider text-xs">58 Wilayas Delivery &amp; Payment</h4>
+                    <ul class="space-y-2 text-zinc-400">
+                        <li>• Algiers, Annaba, Oran, Constantine: <span class="text-zinc-200 font-semibold">500 DA</span></li>
+                        <li>• North &amp; Hauts Plateaux Wilayas: <span class="text-zinc-200 font-semibold">800 DA</span></li>
+                        <li>• Southern Wilayas (Adrar, Tamanrasset...): <span class="text-zinc-200 font-semibold">1,200 DA</span></li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-2.5 py-1 rounded-md bg-obsidian-900 border border-zinc-800 text-[11px] font-bold text-emerald-400">COD / Paiement à la livraison</span>
+                        <span class="px-2.5 py-1 rounded-md bg-obsidian-900 border border-zinc-800 text-[11px] font-bold text-amberforge-400">BaridiMob</span>
+                        <span class="px-2.5 py-1 rounded-md bg-obsidian-900 border border-zinc-800 text-[11px] font-bold text-sky-400">Carte CIB</span>
+                    </div>
+                </div>
+
+                <!-- Col 4: Newsletter -->
+                <div class="space-y-3 text-sm">
+                    <h4 class="font-bold text-white uppercase tracking-wider text-xs">Restock Alerts</h4>
+                    <p class="text-zinc-400">Get notified when new Fender, Ibanez, and Marshall shipments arrive in Algeria.</p>
+                    <form onsubmit="subscribeNewsletter(event)" class="flex gap-2">
+                        <input type="email" required placeholder="your@email.dz" class="w-full bg-obsidian-900 border border-zinc-800 focus:border-amberforge-500 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none">
+                        <button type="submit" class="px-4 py-2.5 rounded-xl bg-amberforge-500 hover:bg-amberforge-400 text-obsidian-950 font-bold text-sm shrink-0 transition">
+                            Join
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+                <p>&copy; 2026 GuitarDZ SARL. All rights reserved. Prices in Algerian Dinar (DZD / DA).</p>
+                <p>Built for Algerian Musicians • 58 Wilayas</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===================================================================== -->
+    <!-- QUICK VIEW PRODUCT MODAL -->
+    <!-- ===================================================================== -->
+    <div id="quickViewModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+        <div class="bg-obsidian-900 border border-zinc-800 rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl relative animate-[fadeIn_0.2s_ease-out]">
+            <button onclick="closeQuickView()" aria-label="Close modal" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-obsidian-950/80 border border-zinc-700 text-zinc-300 hover:text-white flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="quickViewContent" class="grid md:grid-cols-2">
+                <!-- Populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- SLIDE-OUT SHOPPING CART DRAWER -->
+    <!-- ===================================================================== -->
+    <div id="cartOverlay" onclick="toggleCart(false)" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-xs transition-opacity"></div>
+    <aside id="cartDrawer" class="fixed top-0 right-0 z-50 h-full w-full max-w-md bg-obsidian-900 border-l border-zinc-800 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
+        
+        <!-- Drawer Header -->
+        <div class="p-5 border-b border-zinc-800 flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-bag-shopping text-amberforge-400 text-lg"></i>
+                <h3 class="text-lg font-bold text-white">Your Gear Bag</h3>
+                <span id="drawerCount" class="text-xs bg-obsidian-800 text-zinc-300 px-2 py-0.5 rounded-full">0 items</span>
+            </div>
+            <button onclick="toggleCart(false)" aria-label="Close Cart" class="w-9 h-9 rounded-xl bg-obsidian-800 text-zinc-400 hover:text-white flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Cart Items List -->
+        <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-5 space-y-4">
+            <!-- Populated dynamically -->
+        </div>
+
+        <!-- Wilaya Shipping Calculator & Totals -->
+        <div class="p-5 bg-obsidian-950 border-t border-zinc-800 space-y-4">
+            <div>
+                <label for="cartWilayaSelect" class="block text-xs font-semibold text-zinc-400 mb-1.5">
+                    <i class="fa-solid fa-truck text-amberforge-400 mr-1"></i> Estimate Delivery by Wilaya (58 Wilayas)
+                </label>
+                <select id="cartWilayaSelect" onchange="updateCartUI()" 
+                    class="w-full bg-obsidian-900 border border-zinc-800 focus:border-amberforge-500 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none">
+                    <!-- Populated with all 58 Wilayas -->
+                </select>
+            </div>
+
+            <div class="space-y-1.5 text-sm">
+                <div class="flex justify-between text-zinc-400">
+                    <span>Subtotal</span>
+                    <span id="cartSubtotal" class="font-semibold text-zinc-200">0 DA</span>
+                </div>
+                <div class="flex justify-between text-zinc-400">
+                    <span>Yalidine Express Shipping</span>
+                    <span id="cartShipping" class="font-semibold text-amberforge-400">500 DA</span>
+                </div>
+                <div class="flex justify-between text-base font-extrabold text-white pt-2 border-t border-zinc-800">
+                    <span>Total (DZD)</span>
+                    <span id="cartTotal" class="text-amberforge-400">0 DA</span>
+                </div>
+            </div>
+
+            <button id="proceedCheckoutBtn" onclick="openCheckoutModal()" disabled
+                class="w-full py-3.5 rounded-xl bg-gradient-to-r from-amberforge-500 to-amberforge-600 hover:from-amberforge-400 hover:to-amberforge-500 disabled:opacity-40 disabled:cursor-not-allowed text-obsidian-950 font-extrabold text-sm shadow-lg transition flex items-center justify-center gap-2">
+                <span>Proceed to Algerian Checkout</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </aside>
+
+    <!-- ===================================================================== -->
+    <!-- ALGERIAN CHECKOUT & RECEIPT MODAL -->
+    <!-- ===================================================================== -->
+    <div id="checkoutModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm overflow-y-auto">
+        <div class="bg-obsidian-900 border border-zinc-800 rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl relative my-8">
+            <button onclick="closeCheckoutModal()" aria-label="Close Checkout" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-obsidian-800 text-zinc-400 hover:text-white flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Checkout Form View -->
+            <div id="checkoutFormView">
+                <div class="mb-6">
+                    <span class="text-xs font-bold uppercase tracking-wider text-amberforge-400">Secure Order • 58 Wilayas</span>
+                    <h3 class="text-2xl font-extrabold text-white mt-0.5">Complete Your GuitarDZ Order</h3>
+                </div>
+
+                <form onsubmit="placeOrder(event)" class="space-y-4">
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-zinc-400 mb-1">Full Name *</label>
+                            <input id="custName" type="text" required placeholder="e.g. Yacine Mansouri" 
+                                class="w-full bg-obsidian-950 border border-zinc-800 focus:border-amberforge-500 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-zinc-400 mb-1">Algerian Phone Number *</label>
+                            <input id="custPhone" type="tel" required placeholder="05 / 06 / 07 XX XX XX XX" 
+                                class="w-full bg-obsidian-950 border border-zinc-800 focus:border-amberforge-500 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none">
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-zinc-400 mb-1">Wilaya *</label>
+                            <select id="checkoutWilayaSelect" onchange="syncWilayaFromCheckout()"
+                                class="w-full bg-obsidian-950 border border-zinc-800 focus:border-amberforge-500 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none">
+                                <!-- Synced with 58 wilayas -->
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-zinc-400 mb-1">Commune / Delivery Address *</label>
+                            <input id="custAddress" type="text" required placeholder="e.g. Hydra, Rue Sidi Yahia" 
+                                class="w-full bg-obsidian-950 border border-zinc-800 focus:border-amberforge-500 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none">
+                        </div>
+                    </div>
+
+                    <!-- Payment Method Selection -->
+                    <div>
+                        <label class="block text-xs font-semibold text-zinc-400 mb-2">Payment Method *</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                            <label class="cursor-pointer">
+                                <input type="radio" name="paymentMethod" value="Cash on Delivery (Paiement à la livraison)" checked class="peer sr-only">
+                                <div class="p-3 rounded-xl bg-obsidian-950 border border-zinc-800 peer-checked:border-amberforge-500 peer-checked:bg-amberforge-500/10 transition text-center">
+                                    <i class="fa-solid fa-hand-holding-dollar text-emerald-400 text-lg mb-1"></i>
+                                    <p class="text-xs font-bold text-white">Cash on Delivery</p>
+                                    <p class="text-[10px] text-zinc-400">Pay upon inspection</p>
+                                </div>
+                            </label>
+
+                            <label class="cursor-pointer">
+                                <input type="radio" name="paymentMethod" value="BaridiMob (Algérie Poste)" class="peer sr-only">
+                                <div class="p-3 rounded-xl bg-obsidian-950 border border-zinc-800 peer-checked:border-amberforge-500 peer-checked:bg-amberforge-500/10 transition text-center">
+                                    <i class="fa-solid fa-mobile-screen-button text-amberforge-400 text-lg mb-1"></i>
+                                    <p class="text-xs font-bold text-white">BaridiMob</p>
+                                    <p class="text-[10px] text-zinc-400">RIP Instant Transfer</p>
+                                </div>
+                            </label>
+
+                            <label class="cursor-pointer">
+                                <input type="radio" name="paymentMethod" value="Carte CIB / Edahabia" class="peer sr-only">
+                                <div class="p-3 rounded-xl bg-obsidian-950 border border-zinc-800 peer-checked:border-amberforge-500 peer-checked:bg-amberforge-500/10 transition text-center">
+                                    <i class="fa-solid fa-credit-card text-sky-400 text-lg mb-1"></i>
+                                    <p class="text-xs font-bold text-white">CIB / Edahabia</p>
+                                    <p class="text-[10px] text-zinc-400">SATIM Secure Gateway</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Order Summary Box -->
+                    <div class="bg-obsidian-950 border border-zinc-800 rounded-2xl p-4 space-y-1.5 text-sm">
+                        <div class="flex justify-between text-zinc-400">
+                            <span>Gear Subtotal</span>
+                            <span id="checkoutSubtotal" class="text-zinc-200 font-semibold">0 DA</span>
+                        </div>
+                        <div class="flex justify-between text-zinc-400">
+                            <span>Delivery (<span id="checkoutWilayaName">16 - Alger</span>)</span>
+                            <span id="checkoutShipping" class="text-amberforge-400 font-semibold">500 DA</span>
+                        </div>
+                        <div class="flex justify-between text-base font-extrabold text-white pt-2 border-t border-zinc-800">
+                            <span>Total Payable</span>
+                            <span id="checkoutTotal" class="text-amberforge-400">0 DA</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-amberforge-500 to-amberforge-600 hover:from-amberforge-400 hover:to-amberforge-500 text-obsidian-950 font-extrabold text-sm shadow-lg transition">
+                        Confirm Order Now
+                    </button>
+                </form>
+            </div>
+
+            <!-- Simulated Order Confirmation Receipt View -->
+            <div id="orderReceiptView" class="hidden text-center space-y-5 py-4">
+                <div class="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto text-2xl">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Order Confirmed</span>
+                    <h3 class="text-2xl font-extrabold text-white mt-1">Merci! Your Gear is Being Prepped</h3>
+                    <p id="receiptOrderNumber" class="text-xs font-mono text-amberforge-400 mt-1">Order #GDZ-2026-8841</p>
+                </div>
+                <div id="receiptDetails" class="bg-obsidian-950 border border-zinc-800 rounded-2xl p-4 text-left text-xs sm:text-sm space-y-2 text-zinc-300">
+                    <!-- Filled dynamically -->
+                </div>
+                <p class="text-xs text-zinc-400">
+                    Our team will call you shortly to confirm your Yalidine dispatch. Every guitar undergoes a final 12-point luthier check before boxing.
+                </p>
+                <button onclick="closeCheckoutModal()" class="w-full py-3.5 rounded-xl bg-amberforge-500 hover:bg-amberforge-400 text-obsidian-950 font-bold text-sm transition">
+                    Continue Shopping on GuitarDZ
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Toast Notification Banner (No alert() used anywhere) -->
+    <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+    <!-- ===================================================================== -->
+    <!-- APPLICATION LOGIC (Products, 58 Wilayas, Cart, i18n, Checkout) -->
+    <!-- ===================================================================== -->
+    <script>
+        // 1. Curated GuitarDZ Product Catalog (Prices in Algerian Dinar - DA)
+        let products = [
+            {
+                id: 1,
+                brand: "Fender",
+                name: "Player II Stratocaster HSS",
+                category: "Electric",
+                price: 168000,
+                specs: "Alder Body • Maple Neck • Player Series Alnico V Pickups",
+                badge: "Best Seller",
+                image: "https://images.unsplash.com/photo-1564186763535-ebb21ef5277f?auto=format&fit=crop&w=800&q=80",
+                description: "Built for stage versatility in Algeria's live music scene, the Player II Stratocaster HSS pairs classic bell-like single-coil chime with a high-output bridge humbucker and 2-point tremolo.",
+                fullSpecs: ["Body: Alder (Gloss Polyester)", "Neck: Modern 'C' Maple, 9.5\" Radius", "Pickups: 1x Humbucker, 2x Alnico V Single-Coils", "Includes: Setup by GuitarDZ Luthier"]
+            },
+            {
+                id: 2,
+                brand: "Gibson",
+                name: "Les Paul Standard '50s",
+                category: "Electric",
+                price: 345000,
+                specs: "Solid Mahogany • AA Figured Maple Top • Burstbucker 1 & 2",
+                badge: "Flagship",
+                image: "https://images.unsplash.com/photo-1550291652-6ea9114a47b1?auto=format&fit=crop&w=800&q=80",
+                description: "The gold standard of rock and blues sustain. Crafted with a solid non-weight-relieved mahogany body, hand-wired Orange Drop capacitors, and Gibson hardshell case.",
+                fullSpecs: ["Body: Mahogany with AA Figured Maple Top", "Neck: Vintage '50s Rosewood Fretboard", "Pickups: Burstbucker 1 (Neck) & Burstbucker 2 (Bridge)", "Case: Gibson Hardshell Case Included"]
+            },
+            {
+                id: 3,
+                brand: "Ibanez",
+                name: "RG550 Genesis Collection",
+                category: "Electric",
+                price: 189000,
+                specs: "Made in Japan • Super Wizard Neck • Edge Tremolo",
+                badge: "Made in Japan",
+                image: "https://images.unsplash.com/photo-1516924962500-2b4b3b99ea02?auto=format&fit=crop&w=800&q=80",
+                description: "Precision Japanese craftsmanship built for high-speed shred and metal. Features the ultra-thin 5-piece Maple/Walnut Super Wizard neck and rock-solid Edge locking tremolo.",
+                fullSpecs: ["Origin: FujiGen Factory, Japan", "Neck: 5pc Maple/Walnut Super Wizard", "Bridge: Original Edge Locking Tremolo", "Pickups: V7 / S1 / V8 HSH Configuration"]
+            },
+            {
+                id: 4,
+                brand: "Yamaha",
+                name: "FG830 Solid Top Dreadnought",
+                category: "Acoustic",
+                price: 68500,
+                specs: "Solid Sitka Spruce Top • Rosewood Back & Sides",
+                badge: "Top Acoustic",
+                image: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=800&q=80",
+                description: "Rich overtones and booming projection thanks to scalloped bracing and rosewood back and sides. Ideal for studio recording, Rai-acoustic fusion, and unplugged sessions.",
+                fullSpecs: ["Top: Solid Sitka Spruce", "Back & Sides: Rosewood", "Fingerboard: Rosewood, 20 Frets", "Finish: Natural High-Gloss"]
+            },
+            {
+                id: 5,
+                brand: "Fender",
+                name: "CD-60SCE Electro-Acoustic",
+                category: "Acoustic",
+                price: 59000,
+                specs: "Solid Spruce • Venetian Cutaway • Fishman Preamp & Tuner",
+                badge: "Stage Ready",
+                image: "https://images.unsplash.com/photo-1525201548942-d8732f6617a0?auto=format&fit=crop&w=800&q=80",
+                description: "Plug directly into any PA system or acoustic amp with onboard Fishman electronics, built-in chromatic tuner, and effortless upper-fret cutaway access.",
+                fullSpecs: ["Top: Solid Spruce with Scalloped X-Bracing", "Electronics: Fishman CD Preamp with Tuner", "Neck: Easy-to-Play Rolled Fretboard Edges", "Hardware: Chrome Die-Cast Tuners"]
+            },
+            {
+                id: 6,
+                brand: "Fender",
+                name: "Player Jazz Bass V (5-String)",
+                category: "Bass",
+                price: 175000,
+                specs: "5-String • Dual Alnico V Single-Coils • Alder Body",
+                badge: "Pro Bass",
+                image: "https://images.unsplash.com/photo-1612225330812-01a9c6b355ec?auto=format&fit=crop&w=800&q=80",
+                description: "Extended low-B punch with legendary Jazz Bass growl. Smooth satin-back maple neck designed for effortless slap, fingerstyle, and groove sessions.",
+                fullSpecs: ["Strings: 5-String (34\" Scale)", "Pickups: 2x Player Series Alnico 5 Single-Coil Jazz Bass", "Bridge: 5-Saddle Standard", "Finish: 3-Color Sunburst"]
+            },
+            {
+                id: 7,
+                brand: "Marshall",
+                name: "DSL40CR 40W All-Tube Combo",
+                category: "Amps & Pedals",
+                price: 148000,
+                specs: "40W EL34 Tube Power • 12\" Celestion V-Type • 220V DZ",
+                badge: "All-Tube",
+                image: "https://images.unsplash.com/photo-1519508234439-4f23643125c1?auto=format&fit=crop&w=800&q=80",
+                description: "Authentic British all-valve tone with 4 switchable modes from crystal-clear cleans to saturated JCM800 crunch. Includes power reduction down to 20W for home practice.",
+                fullSpecs: ["Power: 40W / 20W Switchable (220V EU/DZ)", "Tubes: 4x ECC83 Preamp, 2x EL34 Power", "Speaker: 1x 12\" Celestion V-Type", "Includes: 2-Way Footswitch"]
+            },
+            {
+                id: 8,
+                brand: "Boss",
+                name: "Katana-50 Gen 3 Modeling Amp",
+                category: "Amps & Pedals",
+                price: 64000,
+                specs: "50W Stage Amp • 12 Amp Characters • 60+ Boss Effects",
+                badge: "Popular",
+                image: "https://images.unsplash.com/photo-1558098329-a11cff621064?auto=format&fit=crop&w=800&q=80",
+                description: "The ultimate gigging and bedroom amp in Algeria. Tube Logic sound, Power Control (0.5W / 25W / 50W) for apartment-friendly volume, and USB recording out.",
+                fullSpecs: ["Power: 50W with 0.5W Bedroom Attenuator", "Effects: 60+ Built-in Boss Stompboxes", "Connectivity: USB-C Audio Interface & Tone Studio", "Voltage: 220V-240V Algeria Compatible"]
+            },
+            {
+                id: 9,
+                brand: "Boss",
+                name: "DS-1 Distortion & SD-1 Twin Pack",
+                category: "Amps & Pedals",
+                price: 24500,
+                specs: "Iconic Analog Overdrive + Distortion • 5-Year Warranty",
+                badge: "Pedal Deal",
+                image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=800&q=80",
+                description: "Stack the legendary Boss SD-1 Super Overdrive into the classic DS-1 Distortion for singing lead sustain and tight rhythm crunch.",
+                fullSpecs: ["Pedals Included: BOSS DS-1 + BOSS SD-1", "Construction: Tank-tough Die-Cast Metal", "Power: 9V Battery or PSA Adapter", "Bypass: Buffered Boss Circuitry"]
+            },
+            {
+                id: 10,
+                brand: "Elixir",
+                name: "Nanoweb Electric Strings (3-Pack) + Care Kit",
+                category: "Accessories",
+                price: 7800,
+                specs: "10-46 Light Gauge • Anti-Rust Coating • Dunlop Picks",
+                badge: "Essential",
+                image: "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&w=800&q=80",
+                description: "Extend your tone life 3x to 5x against humidity. Includes 3 sets of Elixir Nanoweb 10-46 strings, microfiber cloth, and 6 Dunlop Tortex picks.",
+                fullSpecs: ["Gauge: .010, .013, .017, .026, .036, .046", "Coating: Ultra-thin Nanoweb Anti-Rust", "Bonus: 6x Dunlop Tortex 0.88mm Picks"]
+            },
+            {
+                id: 11,
+                brand: "Squier",
+                name: "GuitarDZ Complete Starter Bundle",
+                category: "Electric",
+                price: 64000,
+                specs: "Squier Sonic Strat HSS + Marshall MG15 + Gig Bag & Cable",
+                badge: "Bundle Save",
+                image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=800&q=80",
+                description: "Everything you need out of the box: Squier Sonic Stratocaster HSS calibrated by our luthiers, Marshall MG15G 15W amp, padded bag, strap, tuner, and 3m cable.",
+                fullSpecs: ["Guitar: Squier Sonic Stratocaster HSS", "Amp: Marshall MG15G (220V)", "Accessories: Padded Gig Bag, Clip Tuner, Strap, Cable, Picks"]
+            }
+        ];
+
+        // DEMO STORAGE: changes made in admin.html are saved in this browser only.
+        // For a real owner-only online dashboard, this will later be replaced with Supabase.
+        const PRODUCT_STORAGE_KEY = "guitardz_demo_products_v1";
+        try {
+            const savedProducts = localStorage.getItem(PRODUCT_STORAGE_KEY);
+            if (savedProducts) products.splice(0, products.length, ...JSON.parse(savedProducts));
+        } catch (error) { console.warn("Could not load saved demo products", error); }
+
+        // 2. All 58 Algerian Wilayas with Realistic Yalidine Shipping Rates (DZD / DA)
+        const wilayas = [
+            { code: "16", name: "Alger", rate: 500 },
+            { code: "23", name: "Annaba", rate: 500 },
+            { code: "31", name: "Oran", rate: 500 },
+            { code: "25", name: "Constantine", rate: 500 },
+            { code: "09", name: "Blida", rate: 500 },
+            { code: "19", name: "Sétif", rate: 650 },
+            { code: "06", name: "Béjaïa", rate: 650 },
+            { code: "15", name: "Tizi Ouzou", rate: 650 },
+            { code: "35", name: "Boumerdès", rate: 550 },
+            { code: "42", name: "Tipaza", rate: 550 },
+            { code: "01", name: "Adrar", rate: 1200 },
+            { code: "02", name: "Chlef", rate: 750 },
+            { code: "03", name: "Laghouat", rate: 950 },
+            { code: "04", name: "Oum El Bouaghi", rate: 750 },
+            { code: "05", name: "Batna", rate: 750 },
+            { code: "07", name: "Biskra", rate: 850 },
+            { code: "08", name: "Béchar", rate: 1150 },
+            { code: "10", name: "Bouira", rate: 700 },
+            { code: "11", name: "Tamanrasset", rate: 1400 },
+            { code: "12", name: "Tébessa", rate: 800 },
+            { code: "13", name: "Tlemcen", rate: 750 },
+            { code: "14", name: "Tiaret", rate: 800 },
+            { code: "17", name: "Djelfa", rate: 850 },
+            { code: "18", name: "Jijel", rate: 700 },
+            { code: "20", name: "Saïda", rate: 800 },
+            { code: "21", name: "Skikda", rate: 650 },
+            { code: "22", name: "Sidi Bel Abbès", rate: 750 },
+            { code: "24", name: "Guelma", rate: 650 },
+            { code: "26", name: "Médéa", rate: 700 },
+            { code: "27", name: "Mostaganem", rate: 700 },
+            { code: "28", name: "M'Sila", rate: 800 },
+            { code: "29", name: "Mascara", rate: 750 },
+            { code: "30", name: "Ouargla", rate: 1050 },
+            { code: "32", name: "El Bayadh", rate: 950 },
+            { code: "33", name: "Illizi", rate: 1400 },
+            { code: "34", name: "Bordj Bou Arréridj", rate: 700 },
+            { code: "36", name: "El Tarf", rate: 650 },
+            { code: "37", name: "Tindouf", rate: 1400 },
+            { code: "38", name: "Tissemsilt", rate: 800 },
+            { code: "39", name: "El Oued", rate: 1000 },
+            { code: "40", name: "Khenchela", rate: 800 },
+            { code: "41", name: "Souk Ahras", rate: 700 },
+            { code: "43", name: "Mila", rate: 700 },
+            { code: "44", name: "Aïn Defla", rate: 700 },
+            { code: "45", name: "Naâma", rate: 1000 },
+            { code: "46", name: "Aïn Témouchent", rate: 750 },
+            { code: "47", name: "Ghardaïa", rate: 1000 },
+            { code: "48", name: "Relizane", rate: 750 },
+            { code: "49", name: "Timimoun", rate: 1250 },
+            { code: "50", name: "Bordj Badji Mokhtar", rate: 1450 },
+            { code: "51", name: "Ouled Djellal", rate: 950 },
+            { code: "52", name: "Béni Abbès", rate: 1200 },
+            { code: "53", name: "In Salah", rate: 1300 },
+            { code: "54", name: "In Guezzam", rate: 1450 },
+            { code: "55", name: "Touggourt", rate: 1000 },
+            { code: "56", name: "Djanet", rate: 1450 },
+            { code: "57", name: "El M'Ghair", rate: 950 },
+            { code: "58", name: "El Meniaa", rate: 1100 }
+        ];
+
+        // 3. Language Translations (EN / FR / AR)
+        const translations = {
+            en: {
+                top_delivery: "Fast Yalidine / ZR Express Delivery to 58 Wilayas",
+                top_cod: "Cash on Delivery (Paiement à la livraison) & BaridiMob",
+                nav_electric: "Electric Guitars",
+                nav_acoustic: "Acoustic Guitars",
+                nav_bass: "Basses",
+                nav_amps: "Amps & Pedals",
+                nav_accessories: "Accessories",
+                nav_luthier: "Luthier & Contact",
+                hero_kicker: "Algeria's Premier Guitar Destination • Alger • Annaba • Oran",
+                hero_title_1: "Find Your",
+                hero_title_2: "Signature Sound",
+                hero_subtitle: "From iconic Fender Stratocasters and Gibson Les Pauls to stage-ready Marshall amps and analog pedals. Inspected by our luthiers and delivered safely to all 58 wilayas.",
+                cta_shop: "Shop Collection",
+                cta_amps: "Explore Amps & Gear",
+                badge_wilayas: "Delivery to 58 Wilayas",
+                badge_cod: "Cash on Delivery (COD)",
+                badge_authentic: "100% Authentic Gear",
+                catalog_heading: "Instruments & Stage Gear"
+            },
+            fr: {
+                top_delivery: "Livraison Rapide Yalidine / ZR Express vers 58 Wilayas",
+                top_cod: "Paiement à la livraison (COD), BaridiMob & Carte CIB",
+                nav_electric: "Guitares Électriques",
+                nav_acoustic: "Guitares Acoustiques",
+                nav_bass: "Basses",
+                nav_amps: "Amplis & Pédales",
+                nav_accessories: "Accessoires",
+                nav_luthier: "Luthier & Contact",
+                hero_kicker: "La Référence Guitare en Algérie • Alger • Annaba • Oran",
+                hero_title_1: "Trouvez Votre",
+                hero_title_2: "Son Signature",
+                hero_subtitle: "Des légendaires Fender Stratocaster et Gibson Les Paul aux amplis Marshall et pédales analogiques. Réglées par nos luthiers et livrées dans les 58 wilayas.",
+                cta_shop: "Voir la Collection",
+                cta_amps: "Amplis & Effets",
+                badge_wilayas: "Livraison 58 Wilayas",
+                badge_cod: "Paiement à la Livraison",
+                badge_authentic: "Matériel 100% Authentique",
+                catalog_heading: "Instruments & Équipement Scène"
+            },
+            ar: {
+                top_delivery: "توصيل سريع عبر ياليدين إلى 58 ولاية في الجزائر",
+                top_cod: "الدفع عند الاستلام أو عبر بريدي موب وبطاقة CIB",
+                nav_electric: "غيتار كهربائي",
+                nav_acoustic: "غيتار أكوستيك",
+                nav_bass: "باص غيتار",
+                nav_amps: "مضخمات ودواسات",
+                nav_accessories: "إكسسوارات",
+                nav_luthier: "ورشة الصيانة",
+                hero_kicker: "وجهتك الأولى للغيتار في الجزائر • العاصمة • عنابة • وهران",
+                hero_title_1: "اكتشف",
+                hero_title_2: "صوتك الفريد",
+                hero_subtitle: "من غيتارات Fender و Gibson الأصلية إلى مضخمات Marshall والدواسات الاحترافية. مفحوصة بدقة ومضمونة مع التوصيل لجميع الولايات.",
+                cta_shop: "تسوق المجموعة",
+                cta_amps: "المضخمات والمعدات",
+                badge_wilayas: "توصيل لـ 58 ولاية",
+                badge_cod: "الدفع عند الاستلام",
+                badge_authentic: "منتجات أصلية 100%",
+                catalog_heading: "الآلات الموسيقية والمعدات"
+            }
+        };
+
+        // 4. Application State
+        let currentCategory = "All";
+        let searchQuery = "";
+        let cart = [
+            { id: 1, qty: 1 } // Pre-loaded with 1 Fender Stratocaster so users can immediately test the cart & checkout
+        ];
+
+        // Format currency in Algerian Dinar (e.g., 168,000 DA)
+        function formatDZD(amount) {
+            return amount.toLocaleString('en-US') + " DA";
+        }
+
+        // Populate 58 Wilayas dropdowns
+        function initWilayaDropdowns() {
+            const cartSelect = document.getElementById('cartWilayaSelect');
+            const checkoutSelect = document.getElementById('checkoutWilayaSelect');
+            
+            const optionsHTML = wilayas.map(w => 
+                `<option value="${w.code}">${w.code} - ${w.name} (${formatDZD(w.rate)})</option>`
+            ).join('');
+
+            cartSelect.innerHTML = optionsHTML;
+            checkoutSelect.innerHTML = optionsHTML;
+        }
+
+        // Render Product Cards
+        function renderProducts() {
+            const grid = document.getElementById('productGrid');
+            const emptyState = document.getElementById('emptyState');
+            const countLabel = document.getElementById('productCount');
+            const sortBy = document.getElementById('sortSelect').value;
+
+            let filtered = products.filter(p => {
+                const matchesCat = currentCategory === "All" || p.category === currentCategory;
+                const q = searchQuery.toLowerCase().trim();
+                const matchesSearch = !q || 
+                    p.name.toLowerCase().includes(q) || 
+                    p.brand.toLowerCase().includes(q) || 
+                    p.specs.toLowerCase().includes(q) ||
+                    p.category.toLowerCase().includes(q);
+                return matchesCat && matchesSearch;
+            });
+
+            if (sortBy === "price-asc") {
+                filtered.sort((a, b) => a.price - b.price);
+            } else if (sortBy === "price-desc") {
+                filtered.sort((a, b) => b.price - a.price);
+            }
+
+            countLabel.textContent = `Showing ${filtered.length} item${filtered.length === 1 ? '' : 's'}`;
+
+            if (filtered.length === 0) {
+                grid.innerHTML = "";
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+            grid.innerHTML = filtered.map(product => `
+                <article class="group bg-obsidian-900 border border-zinc-800/90 hover:border-amberforge-500/50 rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-amberforge-500/10">
+                    <div>
+                        <!-- Image Wrapper -->
+                        <div class="relative aspect-[4/3] bg-obsidian-950 overflow-hidden border-b border-zinc-800/80">
+                            <img src="${product.image}" 
+                                 onerror="this.onerror=null;this.src='https://placehold.co/600x450/18181f/fbbf24?text=${encodeURIComponent(product.brand + ' ' + product.name)}';"
+                                 alt="${product.name}" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            
+                            <!-- Brand & Badge -->
+                            <div class="absolute top-3 left-3 flex items-center gap-1.5">
+                                <span class="px-2.5 py-1 rounded-lg bg-obsidian-950/90 backdrop-blur-md border border-zinc-700/80 text-[11px] font-bold uppercase tracking-wider text-amberforge-400">
+                                    ${product.brand}
+                                </span>
+                                ${product.badge ? `<span class="px-2 py-1 rounded-lg bg-amberforge-500 text-obsidian-950 text-[10px] font-extrabold uppercase">${product.badge}</span>` : ''}
+                            </div>
+
+                            <!-- Quick View Overlay Button -->
+                            <button onclick="openQuickView(${product.id})" 
+                                class="absolute bottom-3 right-3 px-3 py-1.5 rounded-xl bg-obsidian-950/90 hover:bg-amberforge-500 text-zinc-200 hover:text-obsidian-950 border border-zinc-700 hover:border-amberforge-500 text-xs font-semibold backdrop-blur-md transition flex items-center gap-1.5 shadow-md">
+                                <i class="fa-regular fa-eye"></i>
+                                <span>Quick View</span>
+                            </button>
+                        </div>
+
+                        <!-- Card Content -->
+                        <div class="p-5">
+                            <span class="text-[11px] font-medium text-zinc-500 uppercase tracking-wider">${product.category}</span>
+                            <h3 class="text-base sm:text-lg font-bold text-white mt-0.5 group-hover:text-amberforge-400 transition-colors line-clamp-1">
+                                ${product.name}
+                            </h3>
+                            <p class="text-xs text-zinc-400 mt-1.5 line-clamp-2 leading-relaxed">
+                                ${product.specs}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Price & Add to Cart -->
+                    <div class="px-5 pb-5 pt-2 flex items-center justify-between gap-3 border-t border-zinc-800/50">
+                        <div>
+                            <span class="block text-[10px] text-zinc-500 uppercase">Price (DZD)</span>
+                            <span class="text-lg font-extrabold text-white">${formatDZD(product.price)}</span>
+                        </div>
+                        <button onclick="addToCart(${product.id})" 
+                            class="px-4 py-2.5 rounded-xl bg-obsidian-800 hover:bg-amberforge-500 text-amberforge-400 hover:text-obsidian-950 border border-amberforge-500/30 hover:border-amberforge-500 font-bold text-xs transition flex items-center gap-1.5">
+                            <i class="fa-solid fa-cart-plus"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        // Category Switching
+        function setCategory(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                if (btn.dataset.category === cat) {
+                    btn.className = "category-btn active px-4 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap bg-amberforge-500 text-obsidian-950 transition";
+                } else {
+                    btn.className = "category-btn px-4 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap bg-obsidian-900 text-zinc-300 border border-zinc-800 hover:border-amberforge-500/40 transition";
+                }
+            });
+            renderProducts();
+        }
+
+        function selectCategoryFromNav(cat) {
+            setCategory(cat);
+            const catalogEl = document.getElementById('catalog');
+            if (catalogEl) catalogEl.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function resetFilters() {
+            searchQuery = "";
+            document.getElementById('searchInput').value = "";
+            document.getElementById('mobileSearchInput').value = "";
+            document.getElementById('sortSelect').value = "featured";
+            setCategory("All");
+        }
+
+        // Live Search Listeners
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            document.getElementById('mobileSearchInput').value = searchQuery;
+            renderProducts();
+        });
+
+        document.getElementById('mobileSearchInput').addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            document.getElementById('searchInput').value = searchQuery;
+            renderProducts();
+        });
+
+        // Quick View Modal Logic
+        function openQuickView(productId) {
+            const p = products.find(item => item.id === productId);
+            if (!p) return;
+
+            const modal = document.getElementById('quickViewModal');
+            const content = document.getElementById('quickViewContent');
+
+            content.innerHTML = `
+                <div class="bg-obsidian-950 aspect-square md:aspect-auto flex items-center justify-center overflow-hidden border-b md:border-b-0 md:border-r border-zinc-800">
+                    <img src="${p.image}" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x600/18181f/fbbf24?text=${encodeURIComponent(p.name)}';"
+                         alt="${p.name}" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6 sm:p-8 flex flex-col justify-between space-y-5">
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-1 rounded-lg bg-amberforge-500/15 border border-amberforge-500/30 text-amberforge-400 text-xs font-bold uppercase">${p.brand}</span>
+                            <span class="text-xs text-zinc-400">${p.category}</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-white">${p.name}</h3>
+                        <p class="text-2xl font-extrabold text-amberforge-400">${formatDZD(p.price)}</p>
+                        <p class="text-sm text-zinc-300 leading-relaxed">${p.description}</p>
+                        <div class="pt-2">
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2">Key Specifications</h4>
+                            <ul class="space-y-1.5 text-xs text-zinc-300">
+                                ${p.fullSpecs.map(spec => `<li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amberforge-400 text-[10px]"></i><span>${spec}</span></li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-zinc-800 flex items-center gap-3">
+                        <button onclick="addToCart(${p.id}); closeQuickView();" 
+                            class="flex-1 py-3.5 rounded-xl bg-amberforge-500 hover:bg-amberforge-400 text-obsidian-950 font-extrabold text-sm transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-cart-plus"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeQuickView() {
+            const modal = document.getElementById('quickViewModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Shopping Cart Logic
+        function addToCart(productId) {
+            const existing = cart.find(item => item.id === productId);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ id: productId, qty: 1 });
+            }
+            updateCartUI();
+            const product = products.find(p => p.id === productId);
+            showToast(`Added "${product.name}" to your gear bag`);
+        }
+
+        function addBundleToCart() {
+            addToCart(11);
+            toggleCart(true);
+        }
+
+        function updateQuantity(productId, delta) {
+            const idx = cart.findIndex(item => item.id === productId);
+            if (idx === -1) return;
+            cart[idx].qty += delta;
+            if (cart[idx].qty <= 0) {
+                cart.splice(idx, 1);
+            }
+            updateCartUI();
+        }
+
+        function getSelectedWilaya() {
+            const code = document.getElementById('cartWilayaSelect').value || "16";
+            return wilayas.find(w => w.code === code) || wilayas[0];
+        }
+
+        function updateCartUI() {
+            const container = document.getElementById('cartItemsContainer');
+            const badge = document.getElementById('cartBadge');
+            const drawerCount = document.getElementById('drawerCount');
+            const subtotalEl = document.getElementById('cartSubtotal');
+            const shippingEl = document.getElementById('cartShipping');
+            const totalEl = document.getElementById('cartTotal');
+            const checkoutBtn = document.getElementById('proceedCheckoutBtn');
+
+            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+            badge.textContent = totalItems;
+            drawerCount.textContent = `${totalItems} item${totalItems === 1 ? '' : 's'}`;
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-14 space-y-3">
+                        <div class="w-14 h-14 rounded-2xl bg-obsidian-800 text-zinc-500 flex items-center justify-center mx-auto text-xl">
+                            <i class="fa-solid fa-guitar"></i>
+                        </div>
+                        <p class="text-white font-bold">Your gear bag is empty</p>
+                        <p class="text-xs text-zinc-400">Add guitars, amps, or pedals to estimate 58-wilaya delivery.</p>
+                    </div>
+                `;
+                subtotalEl.textContent = "0 DA";
+                shippingEl.textContent = "0 DA";
+                totalEl.textContent = "0 DA";
+                checkoutBtn.disabled = true;
+                return;
+            }
+
+            checkoutBtn.disabled = false;
+            let subtotal = 0;
+
+            container.innerHTML = cart.map(item => {
+                const p = products.find(prod => prod.id === item.id);
+                const lineTotal = p.price * item.qty;
+                subtotal += lineTotal;
+
+                return `
+                    <div class="flex gap-3.5 bg-obsidian-950 border border-zinc-800 rounded-2xl p-3">
+                        <img src="${p.image}" 
+                             onerror="this.onerror=null;this.src='https://placehold.co/120x120/18181f/fbbf24?text=GuitarDZ';"
+                             alt="${p.name}" class="w-16 h-16 rounded-xl object-cover bg-obsidian-900 shrink-0">
+                        <div class="flex-1 min-w-0">
+                            <span class="text-[10px] font-bold uppercase text-amberforge-400">${p.brand}</span>
+                            <h4 class="text-sm font-bold text-white truncate">${p.name}</h4>
+                            <p class="text-xs font-semibold text-zinc-300 mt-0.5">${formatDZD(lineTotal)}</p>
+                            <div class="flex items-center gap-2 mt-2">
+                                <button onclick="updateQuantity(${p.id}, -1)" class="w-7 h-7 rounded-lg bg-obsidian-800 hover:bg-zinc-700 text-zinc-200 text-xs font-bold">-</button>
+                                <span class="text-xs font-bold text-white w-5 text-center">${item.qty}</span>
+                                <button onclick="updateQuantity(${p.id}, 1)" class="w-7 h-7 rounded-lg bg-obsidian-800 hover:bg-zinc-700 text-zinc-200 text-xs font-bold">+</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            const wilaya = getSelectedWilaya();
+            const total = subtotal + wilaya.rate;
+
+            subtotalEl.textContent = formatDZD(subtotal);
+            shippingEl.textContent = formatDZD(wilaya.rate);
+            totalEl.textContent = formatDZD(total);
+        }
+
+        function toggleCart(open) {
+            const drawer = document.getElementById('cartDrawer');
+            const overlay = document.getElementById('cartOverlay');
+            if (open) {
+                overlay.classList.remove('hidden');
+                drawer.classList.remove('translate-x-full');
+            } else {
+                overlay.classList.add('hidden');
+                drawer.classList.add('translate-x-full');
+            }
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Checkout Modal Logic
+        function openCheckoutModal() {
+            toggleCart(false);
+            const modal = document.getElementById('checkoutModal');
+            document.getElementById('checkoutFormView').classList.remove('hidden');
+            document.getElementById('orderReceiptView').classList.add('hidden');
+
+            // Sync Wilaya selection from cart drawer
+            document.getElementById('checkoutWilayaSelect').value = document.getElementById('cartWilayaSelect').value;
+            updateCheckoutTotals();
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function syncWilayaFromCheckout() {
+            document.getElementById('cartWilayaSelect').value = document.getElementById('checkoutWilayaSelect').value;
+            updateCartUI();
+            updateCheckoutTotals();
+        }
+
+        function updateCheckoutTotals() {
+            const subtotal = cart.reduce((sum, item) => {
+                const p = products.find(prod => prod.id === item.id);
+                return sum + (p.price * item.qty);
+            }, 0);
+            const wilaya = getSelectedWilaya();
+            document.getElementById('checkoutSubtotal').textContent = formatDZD(subtotal);
+            document.getElementById('checkoutWilayaName').textContent = `${wilaya.code} - ${wilaya.name}`;
+            document.getElementById('checkoutShipping').textContent = formatDZD(wilaya.rate);
+            document.getElementById('checkoutTotal').textContent = formatDZD(subtotal + wilaya.rate);
+        }
+
+        function closeCheckoutModal() {
+            const modal = document.getElementById('checkoutModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function placeOrder(event) {
+            event.preventDefault();
+            const name = document.getElementById('custName').value.trim();
+            const phone = document.getElementById('custPhone').value.trim();
+            const address = document.getElementById('custAddress').value.trim();
+            const payment = document.querySelector('input[name="paymentMethod"]:checked').value;
+            const wilaya = getSelectedWilaya();
+
+            const subtotal = cart.reduce((sum, item) => {
+                const p = products.find(prod => prod.id === item.id);
+                return sum + (p.price * item.qty);
+            }, 0);
+            const total = subtotal + wilaya.rate;
+            const orderRef = "GDZ-2026-" + Math.floor(1000 + Math.random() * 9000);
+
+            document.getElementById('receiptOrderNumber').textContent = `Order #${orderRef}`;
+            document.getElementById('receiptDetails').innerHTML = `
+                <div class="flex justify-between"><span class="text-zinc-400">Customer:</span><span class="font-bold text-white">${name}</span></div>
+                <div class="flex justify-between"><span class="text-zinc-400">Phone:</span><span class="font-semibold text-white">${phone}</span></div>
+                <div class="flex justify-between"><span class="text-zinc-400">Destination:</span><span class="font-semibold text-white">${wilaya.code} - ${wilaya.name} (${address})</span></div>
+                <div class="flex justify-between"><span class="text-zinc-400">Payment:</span><span class="font-semibold text-emerald-400">${payment}</span></div>
+                <div class="flex justify-between pt-2 border-t border-zinc-800"><span class="text-zinc-400">Total Amount:</span><span class="font-extrabold text-amberforge-400">${formatDZD(total)}</span></div>
+            `;
+
+            // Clear cart after order confirmation
+            cart = [];
+            updateCartUI();
+
+            document.getElementById('checkoutFormView').classList.add('hidden');
+            document.getElementById('orderReceiptView').classList.remove('hidden');
+        }
+
+        // Language Switcher (EN / FR / AR)
+        function setLanguage(lang) {
+            ['en', 'fr', 'ar'].forEach(code => {
+                const btn = document.getElementById(`lang-${code}`);
+                if (code === lang) {
+                    btn.className = "px-2 py-1 rounded-lg bg-amberforge-500 text-obsidian-950 transition";
+                } else {
+                    btn.className = "px-2 py-1 rounded-lg text-zinc-400 hover:text-white transition";
+                }
+            });
+
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+            const dict = translations[lang];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (dict[key]) {
+                    el.textContent = dict[key];
+                }
+            });
+
+            const labels = { en: "English", fr: "Français", ar: "العربية" };
+            showToast(`Language switched to ${labels[lang]}`);
+        }
+
+        // Luthier & Newsletter Form Handlers
+        function submitLuthierBooking(event) {
+            event.preventDefault();
+            event.target.reset();
+            showToast("Luthier workshop request received! Our team will call you shortly.");
+        }
+
+        function subscribeNewsletter(event) {
+            event.preventDefault();
+            event.target.reset();
+            showToast("Subscribed to GuitarDZ restock alerts!");
+        }
+
+        // Custom Non-Blocking Toast Notification
+        function showToast(message) {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = "bg-obsidian-900 border border-amberforge-500/50 text-white px-4 py-3 rounded-xl shadow-2xl text-xs sm:text-sm font-medium flex items-center gap-2.5 pointer-events-auto transform transition-all duration-300";
+            toast.innerHTML = `<i class="fa-solid fa-circle-check text-amberforge-400"></i><span>${message}</span>`;
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-2');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // Refresh the public catalogue if the admin dashboard changes it in another tab.
+        window.addEventListener('storage', (event) => {
+            if (event.key === PRODUCT_STORAGE_KEY && event.newValue) {
+                try {
+                    products.splice(0, products.length, ...JSON.parse(event.newValue));
+                    renderProducts();
+                    updateCartUI();
+                } catch (error) { console.warn('Could not refresh products', error); }
+            }
+        });
+
+        // Initialize Page
+        window.addEventListener('DOMContentLoaded', () => {
+            initWilayaDropdowns();
+            renderProducts();
+            updateCartUI();
+        });
+    </script>
+
+    <a href="admin.html" class="fixed bottom-4 left-4 z-40 rounded-full border border-amberforge-500/40 bg-obsidian-900/95 px-4 py-2 text-xs font-semibold text-amberforge-400 shadow-xl backdrop-blur hover:bg-obsidian-800" aria-label="Open store owner demo dashboard">Owner dashboard (demo)</a>
+
+</body>
+</html>
